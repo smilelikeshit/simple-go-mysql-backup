@@ -12,5 +12,8 @@ DB_PASSWORD=
 and running command docker-compose up -d 
 access your http://ip_address:8000 for download file 
 
+keep your database file 30 days (for daily backup)
+keep your database file 120 days (for weekly backup)
+
 
 thanks 
