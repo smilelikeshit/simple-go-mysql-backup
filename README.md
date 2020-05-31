@@ -5,11 +5,13 @@ cp .env.example .env
 ```
 ### 
 
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_NAME=xxx
-DB_USERNAME=xxx
-DB_PASSWORD=xxx
+put your database credentials 
+
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_NAME=xxx
+- DB_USERNAME=xxx
+- DB_PASSWORD=xxx
 
 ```
 docker-compose up -d 
