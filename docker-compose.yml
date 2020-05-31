@@ -27,8 +27,8 @@ services:
         max-size: "200k"
         max-file: "10"
     ports:
-      # make sure use firewall for anybody can't access
-      - "8000:8000"
+      # use ssh tunnel for access list file for download
+      - "127.0.0.1:8000:8000"
     environment: 
       COMPOSE_PROJECT_NAME: go-mysql-backup-server
     
