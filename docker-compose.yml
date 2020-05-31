@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  backup:
+    image: golang:1.13-alpine
+    container_name: go-mysql-backup-production
+    volumes: 
+      - ./:/go/src/app
+    working_dir: /go/src/app
+    command: go run main.go
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    environment: 
+      COMPOSE_PROJECT_NAME: go-mysql-backup-production
+  server:
+    image: golang:1.13-alpine
+    container_name: go-mysql-backup-server
+    volumes: 
+      - ./:/go/src/app
+    working_dir: /go/src/app
+    command: go run file.go
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+      # make sure use firewall for anybody can't access
+      - "8000:8000"
+    environment: 
+      COMPOSE_PROJECT_NAME: go-mysql-backup-server
+    
+    
