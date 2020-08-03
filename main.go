@@ -121,7 +121,7 @@ func Weekly(){
 
 func RotateDaily(){
 
-	arg1 := "find dumps/daily -type f -mtime +30 -exec rm -rf {};"
+	arg1 := "find dumps/daily -type f -mtime +30 -exec rm -f {} \;"
 	cmd := exec.Command(arg1)
     stdout, err := cmd.Output()
 
@@ -134,7 +134,7 @@ func RotateDaily(){
 
 func RotateWeekly(){
 
-	arg1 := "find dumps/weekly -type f -mtime +120 -exec rm -rf {};"
+	arg1 := "find dumps/weekly -type f -mtime +120 -exec rm -f {} \;"
 	cmd := exec.Command(arg1)
     stdout, err := cmd.Output()
 
